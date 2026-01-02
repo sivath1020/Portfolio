@@ -154,6 +154,7 @@ header {
 /* ================= HERO ================= */
 .hero {
   padding: 60px 0 30px;
+  
 }
 
 .hero-grid {
@@ -163,6 +164,7 @@ header {
 }
 
 .badge {
+  
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -173,7 +175,8 @@ header {
   );
   border: 1px solid var(--border);
   padding: 8px 12px;
-  border-radius: 999px;
+  
+  border-radius: 50%;
   font-weight: 600;
 }
 
@@ -182,7 +185,10 @@ header {
   font-weight: 700;
   margin: 14px 0 8px;
 }
-
+.hero-image{
+  border-radius: 50%;
+  width: 500px;
+}
 .subtitle {
   color: var(--muted);
   margin-bottom: 20px;
@@ -500,3 +506,59 @@ header {
 .red{
     margin-left: 35%;
 }
+
+
+
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #8cafd2;
+  margin-bottom: 10px;
+}
+
+.hero-title span {
+  color: #2563eb;
+}
+
+.hero-role {
+  font-size: 1.4rem;
+  color: #2563eb;
+  margin-bottom: 20px;
+}
+
+.hero-desc {
+  font-size: 1.1rem;
+  color: #4b5563;
+  max-width: 550px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.cta {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 1px solid #2563eb;
+  color: #2563eb;
+  font-weight: 500;
+}
+
+.btn.primary {
+  background: #2563eb;
+  color: #fff;
+}
+
+
