@@ -185,9 +185,11 @@ header {
   font-weight: 700;
   margin: 14px 0 8px;
 }
-.hero-image{
+.heroo-image{
+  margin-left: 20%;
   border-radius: 50%;
-  width: 500px;
+height: 400px;
+  width: 400px;
 }
 .subtitle {
   color: var(--muted);
