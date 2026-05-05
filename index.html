@@ -534,6 +534,28 @@
     }
 
     /* ── PROJECTS ────────────────────────────────────────────── */
+
+.project-card {
+  position: relative;
+}
+
+.project-card::before,
+.project-card::after {
+  pointer-events: none;
+}
+
+.project-links {
+  position: relative;
+  z-index: 999;
+}
+
+.project-links a {
+  pointer-events: auto;
+}
+
+
+
+
     .projects-section { background: var(--bg-2); }
     .filter-tabs { display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
     .filter-btn {
@@ -1017,78 +1039,169 @@
     </div>
   </section>
 
-  <!-- ========== PROJECTS ========== -->
-  <section id="projects" class="section projects-section">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-label">03 — Projects</span>
-        <h2 class="section-title">What I've Built</h2>
-      </div>
-      <div class="filter-tabs" data-aos="fade-up" data-aos-delay="100">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="frontend">Frontend</button>
-        <button class="filter-btn" data-filter="backend">Backend</button>
-        <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
-      </div>
-      <div class="projects-grid">
-        <div class="project-card glass" data-category="frontend" data-aos="fade-up" data-aos-delay="100">
-          <div class="project-card-top">
-            <div class="project-icon"><i class="fas fa-file-invoice-dollar"></i></div>
-            <div class="project-links">
-              <a href="https://github.com/sivath1020/HTML-CSS-JavaScript" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-              <a href="https://sivath1020.github.io/HTML-CSS-JavaScript/" target="_blank" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
-            </div>
-          </div>
-          <h3 class="project-title">Loan Application System</h3>
-          <p class="project-desc">A fully client-side loan application portal. Users enter personal and financial details, which are validated and processed to dynamically calculate loan eligibility — all without page reload.</p>
-          <div class="project-tags">
-            <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span>
-          </div>
-        </div>
-        <div class="project-card glass" data-category="backend" data-aos="fade-up" data-aos-delay="150">
-          <div class="project-card-top">
-            <div class="project-icon"><i class="fas fa-database"></i></div>
-            <div class="project-links">
-              <a href="https://github.com/sivath1020/REST-API" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            </div>
-          </div>
-          <h3 class="project-title">RESTful API — Spring Boot & MongoDB</h3>
-          <p class="project-desc">Production-ready CRUD backend with Spring Boot and MongoDB. Implements full REST conventions, Lombok for cleaner code, and tested rigorously via Postman. Demonstrates professional backend architecture.</p>
-          <div class="project-tags">
-            <span class="tag">Spring Boot</span><span class="tag">MongoDB</span><span class="tag">Java</span><span class="tag">Postman</span>
-          </div>
-        </div>
-        <div class="project-card glass" data-category="fullstack" data-aos="fade-up" data-aos-delay="200">
-          <div class="project-card-top">
-            <div class="project-icon"><i class="fas fa-tshirt"></i></div>
-            <div class="project-links">
-              <a href="https://github.com/sivath1020/ClothHand" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-              <a href="https://sivath1020.github.io/ClothHand/" target="_blank" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
-            </div>
-          </div>
-          <h3 class="project-title">ClothHand — E-Commerce Auth</h3>
-          <p class="project-desc">A React-based e-commerce authentication platform featuring user registration, login, and session management. Built with component-based architecture and seamlessly integrated with a backend auth service.</p>
-          <div class="project-tags">
-            <span class="tag">React.js</span><span class="tag">JavaScript</span><span class="tag">CSS3</span>
-          </div>
-        </div>
-        <div class="project-card glass" data-category="backend" data-aos="fade-up" data-aos-delay="250">
-          <div class="project-card-top">
-            <div class="project-icon"><i class="fas fa-user-graduate"></i></div>
-            <div class="project-links">
-              <a href="https://github.com/sivath1020/Student-Login" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            </div>
-          </div>
-          <h3 class="project-title">Student Registration — JWT Auth</h3>
-          <p class="project-desc">Secure student registration and login system powered by Spring Boot and MySQL. Features JWT-based authentication, Spring Security integration, input validation, and RESTful endpoints for safe API access.</p>
-          <div class="project-tags">
-            <span class="tag">Spring Boot</span><span class="tag">MySQL</span><span class="tag">JWT</span><span class="tag">Spring Security</span>
-          </div>
-        </div>
-      </div>
+<!-- ========== PROJECTS ========== -->
+<section id="projects" class="section projects-section">
+  <div class="container">
+    
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-label">03 — Projects</span>
+      <h2 class="section-title">What I've Built</h2>
     </div>
-  </section>
 
+    <div class="filter-tabs" data-aos="fade-up" data-aos-delay="100">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="frontend">Frontend</button>
+      <button class="filter-btn" data-filter="backend">Backend</button>
+      <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- Loan App -->
+      <div class="project-card glass" data-category="frontend" data-aos="fade-up">
+        <div class="project-card-top">
+          <div class="project-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+          <div class="project-links">
+            <a href="https://github.com/sivath1020/HTML-CSS-JavaScript" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://sivath1020.github.io/HTML-CSS-JavaScript/" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+        <h3 class="project-title">Loan Application System</h3>
+        <p class="project-desc">
+          A fully client-side loan application portal with dynamic validation and eligibility calculation without page reload.
+        </p>
+        <div class="project-tags">
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS3</span>
+          <span class="tag">JavaScript</span>
+        </div>
+      </div>
+
+      <!-- REST API -->
+      <div class="project-card glass" data-category="backend" data-aos="fade-up">
+        <div class="project-card-top">
+          <div class="project-icon"><i class="fas fa-database"></i></div>
+          <div class="project-links">
+            <a href="https://github.com/sivath1020/REST-API" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <h3 class="project-title">RESTful API — Spring Boot & MongoDB</h3>
+        <p class="project-desc">
+          Production-ready CRUD backend using Spring Boot and MongoDB with proper REST architecture.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Spring Boot</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">Java</span>
+          <span class="tag">Postman</span>
+        </div>
+      </div>
+
+      <!-- ClothHand -->
+      <div class="project-card glass" data-category="fullstack" data-aos="fade-up">
+        <div class="project-card-top">
+          <div class="project-icon"><i class="fas fa-tshirt"></i></div>
+          <div class="project-links">
+            <a href="https://github.com/sivath1020/ClothHand" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://agent-69f5a26aecbd5f9174e12--ecommerce-clothhand.netlify.app/" target="_blank" rel="noopener noreferrer">
+              Live
+            </a>
+          </div>
+        </div>
+        <h3 class="project-title">ClothHand — E-Commerce Auth</h3>
+        <p class="project-desc">
+          React-based authentication system with login, registration, and session management.
+        </p>
+        <div class="project-tags">
+          <span class="tag">React.js</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">CSS3</span>
+        </div>
+      </div>
+
+      <!-- Student JWT -->
+      <div class="project-card glass" data-category="backend" data-aos="fade-up">
+        <div class="project-card-top">
+          <div class="project-icon"><i class="fas fa-user-graduate"></i></div>
+          <div class="project-links">
+            <a href="https://github.com/sivath1020/Student-Login" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <h3 class="project-title">Student Registration — JWT Auth</h3>
+        <p class="project-desc">
+          Secure authentication system using Spring Boot, JWT, and MySQL with REST APIs.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Spring Boot</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">JWT</span>
+          <span class="tag">Spring Security</span>
+        </div>
+      </div>
+
+      <!-- Student Management -->
+      <div class="project-card glass" data-category="frontend" data-aos="fade-up">
+        <div class="project-card-top">
+          <div class="project-icon"><i class="fas fa-user-cog"></i></div>
+          <div class="project-links">
+            <a href="https://github.com/sivath1020" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+        <h3 class="project-title">Student Management System</h3>
+        <p class="project-desc">
+          CRUD-based system with LocalStorage, search, pagination, dashboard analytics, and animations.
+        </p>
+        <div class="project-tags">
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS3</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">LocalStorage</span>
+        </div>
+      </div>
+
+      <!-- News Portal -->
+      <div class="project-card glass" data-category="frontend" data-aos="fade-up">
+        <div class="project-card-top">
+          <div class="project-icon"><i class="fas fa-newspaper"></i></div>
+          <div class="project-links">
+            <a href="https://github.com/sivath1020" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://student-nest-28.lovable.app/" rel="noopener noreferrer">
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+        <h3 class="project-title">News Portal Web Application</h3>
+        <p class="project-desc">
+          API-based news app with search, category filtering, and responsive UI.
+        </p>
+        <div class="project-tags">
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS3</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">API</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
   <!-- ========== EDUCATION ========== -->
   <section id="education" class="section">
     <div class="container">
